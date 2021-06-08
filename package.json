@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/xiaoxue423/gugu-demo0/issues"
   },
-  "homepage": "https://github.com/xiaoxue423/gugu-demo0#readme"
+  "homepage": "https://github.com/xiaoxue423/gugu-demo0#readme",
+  "dependencies": {
+    "vue": "^2.6.14"
+  }
 }
