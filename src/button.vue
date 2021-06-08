@@ -1,5 +1,4 @@
 <template>
-
     <button class="g-button" :class="{ [`icon-${iconPosition}`]: true} "
     @click="$emit('click')" >
 
@@ -11,7 +10,6 @@
       </div>
 
     </button>
-
 </template>
 
 <script>

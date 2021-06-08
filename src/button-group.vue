@@ -6,7 +6,21 @@
 
 <script>
 export default {
-  name: "button-group"
+  name: "button-group",
+  mounted() {
+    console.log('here')
+    console.log(this.$children) //3个组件
+
+    for(let node of this.$el.children){
+      console.log(node)
+      if(node.nodeName.toLowerCase() !== 'button'){
+        let name = node.nodeName.toLowerCase()
+        if(name !== 'button'){
+          console.warn(` g-button-group的子元素应该全是g-button，但是你写的是 ${ name } `)
+        }
+      }
+    }
+  }
 }
 </script>
 
@@ -16,7 +30,11 @@ export default {
   vertical-align: middle;
   > .g-button {
     border-radius: 0;
-    margin-left: -1px;
+
+    //不是第一个才往左移
+    &:not(:first-child){
+      margin-left: -1px;
+    }
 
     &:first-child{
       border-top-left-radius: var(--border-radius);
@@ -35,5 +53,4 @@ export default {
 
   }
 }
-
 </style>
