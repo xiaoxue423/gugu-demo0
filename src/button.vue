@@ -17,10 +17,10 @@ import Vue from 'vue'
 import Icon from './icon.vue'
 
 export default {
+  name: "GuguButton",
   components: {
     'g-icon':Icon
   },
-  name: "button.vue",
   // props: ['icon','iconPosition']
   props:{
     icon:{},

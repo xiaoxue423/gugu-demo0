@@ -62,8 +62,14 @@
                 <g-button icon="right" icon-position="right">下一页</g-button>
             </g-button-group>
         </div>
-
-        <div id="test"></div>
+        <br/>
+        <div>
+            <g-input value="张三"></g-input>
+            <g-input value="李四"></g-input>
+            <g-input value="王五" :disabled="true"></g-input>
+            <g-input value="小明"  readonly></g-input>
+            <g-input error="姓名不能少于两个字"></g-input>
+        </div>
     </div>
     <script src="./src/app.js"></script>
     <script src="//at.alicdn.com/t/font_2239359_ur6nqcrfxy.js"></script>

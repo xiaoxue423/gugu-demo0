@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "button-group",
+  name: "GuguButtonGroup",
   mounted() {
     console.log('here')
     console.log(this.$children) //3个组件
