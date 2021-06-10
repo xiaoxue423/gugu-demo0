@@ -14,7 +14,8 @@ new Vue({
     data: {
         loading1: true,
         loading2: true,
-        loading3: false
+        loading3: false,
+        message:'hi 雪儿'
     },
     created() {
         setTimeout(()=>{
@@ -30,7 +31,6 @@ new Vue({
             console.log(e.target.value)
         }
     },
-
 })
 
 
