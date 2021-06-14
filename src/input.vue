@@ -5,10 +5,14 @@
            @input="$emit('input',$event.target.value)"
            @focus="$emit('focus',$event.target.value)"
            @blur="$emit('blur',$event.target.value)">
-    <template v-if="error">
-      <Icon name="error" class="icon-error"></Icon>
-      <span class="errorMessage">{{ error }}</span>
-    </template>
+
+    <div class="error-wrapper">
+      <template v-if="error">
+        <Icon name="error" class="icon-error"></Icon>
+        <span class="errorMessage">{{ error }}</span>
+      </template>
+    </div>
+
 
   </div>
 </template>
@@ -17,7 +21,7 @@
 import Icon from './icon'
 
 export default {
-  name: "GuguInput",
+  name: "Gugu-Input",
   components: {
     Icon
   },
@@ -43,12 +47,11 @@ export default {
 <style scoped lang="scss">
 $height: 32px;
 $border-color: #999;
-$border-color-hover: #666;
+$border-color-hover: #00BFFF;
 $border-radius: 4px;
 $font-size: 12px;
 $red: #F1453D;
-//边框阴影
-$box-shadow-color: rgba(0, 0, 0, 0.5);
+$box-shadow-color: rgba(0, 0, 0, 0.5); //边框阴影
 .wrapper {
   font-size: $font-size;
   display: inline-flex;
@@ -71,16 +74,16 @@ $box-shadow-color: rgba(0, 0, 0, 0.5);
   > input {
     height: 32px;
     border: 1px solid $border-color;
-    border-radius: 4px;
+    border-radius: $border-radius;
     padding: 0 8px;
-    font-size: inherit;
+    font-size: inherit;//字体大小  是 继承
 
     &:hover {
       border-color: $border-color-hover;
     }
 
     &:focus {
-      box-shadow: inset 0 1px 3px $box-shadow-color;
+      box-shadow: inset  1px 1px 3px $box-shadow-color;
       outline: none;
     }
 
@@ -97,6 +100,10 @@ $box-shadow-color: rgba(0, 0, 0, 0.5);
 
   .errorMessage {
     color: red;
+  }
+
+  .error-wrapper {
+    margin: 20px;
   }
 }
 </style>

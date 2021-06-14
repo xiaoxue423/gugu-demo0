@@ -45,130 +45,136 @@
     .col[data-span="22"]{
         width: 91.6667%;
     }
+
+    .demoBox{
+        min-height: 50px;
+        background: gray;
+        border:1px solid red;
+    }
+    .logo-wrapper{
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
 </style>
-
     <div id="app">
-        <style>
-            .demoBox{
-                min-height: 50px;
-                background: gray;
-                border:1px solid red;
-            }
-            .logo-wrapper{
-                padding: 10px;
-                display: flex;
-                justify-content: center;
-            }
-        </style>
+<!--        <div>-->
+<!--            <g-row>-->
+<!--                <g-col span="23" offset="1" :narrow-pc="{span:12, offset:12}">-->
+<!--                    <div class="demo"></div>-->
+<!--                </g-col>-->
+<!--            </g-row>-->
+<!--        </div>-->
 
-        <g-row class="topbar">
-            <g-col class="demoBox" span="9">
-                <g-row align="left">
-                    <g-col style="width: 50px">1</g-col>
-                    <g-col>2</g-col>
-                    <g-col>3</g-col>
-                    <g-col>4</g-col>
-                </g-row>
-            </g-col>
+<!--        <g-row class="topbar">-->
+<!--            <g-col class="demoBox" span="9">-->
+<!--                <g-row align="left">-->
+<!--                    <g-col style="width: 50px">1</g-col>-->
+<!--                    <g-col>2</g-col>-->
+<!--                    <g-col>3</g-col>-->
+<!--                    <g-col>4</g-col>-->
+<!--                </g-row>-->
+<!--            </g-col>-->
 
-            <g-col class="demoBox" span="15">
-                <g-row align="right">
-                    <g-col style="width: 50px">1</g-col>
-                    <g-col>2</g-col>
-                    <g-col>3</g-col>
-                    <g-col>4</g-col>
-                    <g-col>5</g-col>
-                    <g-col>6</g-col>
-                    <g-col>7</g-col>
-                </g-row>
-            </g-col>
+<!--            <g-col class="demoBox" span="15">-->
+<!--                <g-row align="right">-->
+<!--                    <g-col style="width: 50px">1</g-col>-->
+<!--                    <g-col>2</g-col>-->
+<!--                    <g-col>3</g-col>-->
+<!--                    <g-col>4</g-col>-->
+<!--                    <g-col>5</g-col>-->
+<!--                    <g-col>6</g-col>-->
+<!--                    <g-col>7</g-col>-->
+<!--                </g-row>-->
+<!--            </g-col>-->
 
-        </g-row>
+<!--        </g-row>-->
 
-        <g-row class="logo-and-search-and-qrcode">
-            <g-col class="demoBox" span="4">
-                <g-row align="center">
-                    <g-col  class="logo-wrapper">
-                        <img width="50" class="logo" src="https://img.alicdn">
-                    </g-col>
-                </g-row>
-            </g-col>
+<!--        <g-row class="logo-and-search-and-qrcode">-->
+<!--            <g-col class="demoBox" span="4">-->
+<!--                <g-row align="center">-->
+<!--                    <g-col  class="logo-wrapper">-->
+<!--                        <img width="50" class="logo" src="https://img.alicdn">-->
+<!--                    </g-col>-->
+<!--                </g-row>-->
+<!--            </g-col>-->
 
-            <g-col class="demoBox" span="14"></g-col>
-            <g-col class="demoBox" span="6"></g-col>
+<!--            <g-col class="demoBox" span="14"></g-col>-->
+<!--            <g-col class="demoBox" span="6"></g-col>-->
 
-        </g-row>
+<!--        </g-row>-->
 
-        <div style="border: 1px solid black">
-            <g-row gutter="20">
-                <g-col span="2"
-                       :phone="{span:12,offset: 0}"
-                       :ipad="{span:16}"
-                       :pc="{span:20}"
-                >1</g-col>
-                <g-col span="20"
-                       offset="2"
-                       :phone="{span: 12,offset: 0}"
-                       :ipad="{span: 16}"
-                       :narrow-pc="{span: 20}"
-                       :pc="{span: 22}"
-                       :wide-pc="{span: 23}"
-                >11</g-col>
-            </g-row>
-            <g-row gutter="20">
-                <g-col>1</g-col>
-                <g-col>2</g-col>
-                <g-col>3</g-col>
-            </g-row>
-            <g-row gutter="20">
-                <g-col>1</g-col>
-                <g-col>2</g-col>
-                <g-col>3</g-col>
-                <g-col>4</g-col>
-            </g-row>
-            <g-row gutter="20">
-                <g-col span="2">1</g-col>
-                <g-col span="20" offset="2">11</g-col>
-            </g-row>
-            <g-row gutter="20">
-                <g-col span="4">1</g-col>
-                <g-col span="18" offset="2">11</g-col>
-            </g-row>
+<!--        <div style="border: 1px solid black">-->
+<!--            <g-row gutter="20">-->
+<!--                <g-col span="2"-->
+<!--                       :phone="{span:12,offset: 0}"-->
+<!--                       :ipad="{span:16}"-->
+<!--                       :pc="{span:20}"-->
+<!--                >1</g-col>-->
+<!--                <g-col span="20"-->
+<!--                       offset="2"-->
+<!--                       :phone="{span: 12,offset: 0}"-->
+<!--                       :ipad="{span: 16}"-->
+<!--                       :narrow-pc="{span: 20}"-->
+<!--                       :pc="{span: 22}"-->
+<!--                       :wide-pc="{span: 23}"-->
+<!--                >11</g-col>-->
+<!--            </g-row>-->
+<!--            <g-row gutter="20">-->
+<!--                <g-col>1</g-col>-->
+<!--                <g-col>2</g-col>-->
+<!--                <g-col>3</g-col>-->
+<!--            </g-row>-->
+<!--            <g-row gutter="20">-->
+<!--                <g-col>1</g-col>-->
+<!--                <g-col>2</g-col>-->
+<!--                <g-col>3</g-col>-->
+<!--                <g-col>4</g-col>-->
+<!--            </g-row>-->
+<!--            <g-row gutter="20">-->
+<!--                <g-col span="2">1</g-col>-->
+<!--                <g-col span="20" offset="2">11</g-col>-->
+<!--            </g-row>-->
+<!--            <g-row gutter="20">-->
+<!--                <g-col span="4">1</g-col>-->
+<!--                <g-col span="18" offset="2">11</g-col>-->
+<!--            </g-row>-->
 
-            <g-row gutter="20">
-                <g-col span="4">1</g-col>
-                <g-col span="8" offset="2">11</g-col>
-                <g-col span="8" offset="2">11</g-col>
-            </g-row>
+<!--            <g-row gutter="20">-->
+<!--                <g-col span="4">1</g-col>-->
+<!--                <g-col span="8" offset="2">11</g-col>-->
+<!--                <g-col span="8" offset="2">11</g-col>-->
+<!--            </g-row>-->
 
-            <g-row>
-                <g-col span="4">1</g-col>
-                <g-col span="4" offset="6">11</g-col>
-                <g-col span="8" offset="2">11</g-col>
-            </g-row>
+<!--            <g-row>-->
+<!--                <g-col span="4">1</g-col>-->
+<!--                <g-col span="4" offset="6">11</g-col>-->
+<!--                <g-col span="8" offset="2">11</g-col>-->
+<!--            </g-row>-->
 
-        </div>
-        <hr/>
-        <br>
+<!--        </div>-->
 
+
+        <g-button icon="error">默认按钮</g-button>
+        <g-button icon="settings">默认按钮</g-button>
         <div>
-            <g-button :loading="loading1" @click="loading1 = !loading1">按钮</g-button>
+            <g-button icon="settings">默认按钮</g-button>
+        </div>
+        <div>
+            <g-button :loading="loading1" @click="loading1 = !loading1">默认按钮</g-button>
         </div>
         <br/>
         <div>
-            <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">按钮</g-button>
+            <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">默认按钮</g-button>
         </div>
 
         <br/>
 
         <div>
-            <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">我爱JS</g-button>
+            <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">默认按钮</g-button>
         </div>
 
         <br/>
-        <div>
-            <g-button>我爱JS</g-button>
-        </div>
 
         <br/>
         <div>
@@ -178,6 +184,7 @@
                 <g-button icon="right" icon-position="right">下一页</g-button>
             </g-button-group>
         </div>
+
         <br/>
         <div>
             <g-input value="张三" @change="inputChange"></g-input>
@@ -193,7 +200,7 @@
             <p> {{message}} </p>
         </div>
     </div>
+
     <script src="./src/app.js"></script>
-    <script src="//at.alicdn.com/t/font_2239359_ur6nqcrfxy.js"></script>
 </body>
 </html>

@@ -44,20 +44,49 @@ export default {
       gutter: 0,
     }
   },
+  methods:{
+    createClasses(obj,str = ''){
+      if(!obj) {return []}
+      let array  =  []
+      if(obj.span){ array.push(` col-${str} ${obj.span} `) }
+      if(obj.offset){ array.push(` offset-${str}${obj.offset} `) }
+      return array
+    }
+  },
   computed: {
     colClass() {
       let {span, offset, phone,ipad,narrowPc,pc,widePc} = this
-      let phoneClass = []
-      if (phone) {
-        phoneClass = [`col-phone-${phone.span}`]
-      }
+
+      // let phoneClass = []
+      // if (phone) {
+      //   phoneClass = [`col-phone-${phone.span}`]
+      // }
+      let createClasses = this.createClasses()
+      // let createClasses = (obj,str='') => {
+      //   if(!obj) { return [] }
+      //   //ipad-
+      //   //pc-
+      //     let array  =  []
+      //     if(obj.span){
+      //       array.push(` col-${str}${obj.span} `)
+      //     }
+      //     if(obj.offset){
+      //       array.push(` offset-${str}${obj.offset} `)
+      //     }
+      //     return array
+      // }
+
       return [
-        span && `col-${span}`,
-        offset && `offset - ${ offset }`,
-        ...(phone && [`col-phone - ${ phone.span }`] ),
-        ...(ipad && [`col-ipad-${ ipad.span }`] ),
-        ...(narrowPc && [`col-narrow-pc-${ narrowPc.span }`] ),
-        ...(widePc && [`col-wide-pc-${ widePc.span }`] )
+          ...createClasses({ span,offset }),
+          ...createClasses(ipad,'ipad-'),
+          ...createClasses(narrowPc,'narrow-pc-'),
+          ...createClasses(pc,'pc-'),
+          ...createClasses(widePc,'wide-pc-'),
+        // offset && `offset - ${ offset }`,
+        // ...(phone && [`col-phone - ${ phone.span }`] ),
+        // ...(ipad && [`col-ipad-${ ipad.span }`] ),
+        // ...(narrowPc && [`col-narrow-pc-${ narrowPc.span }`] ),
+        // ...(widePc && [`col-wide-pc-${ widePc.span }`] )
       ]
     },
     colStyle() {
@@ -85,165 +114,74 @@ export default {
 
 <style lang="scss" scoped>
 .col {
-  height: 100px;
-  background: yellow;
-  width: 50%;
-  border: 1px solid red;
-  padding: 0 10px;
-
   $class-prefix: col-;
   @for $n from 1 through 24 {
-    //.col.col-1
-    //.col.col-2
-    &.# {
-      $class-prefix
+    &.#{$class-prefix}#{$n} {
+      width: ($n / 24) * 100%;
     }
-  # {
-    $n
-  } {
-    width: ($n / 24) * 100%;
   }
-  }
-
-  //生成24个offset类
   $class-prefix: offset-;
   @for $n from 1 through 24 {
-    //.col.col-1
-    //.col.col-2
-    &.# {
-      $class-prefix
-    }
-  # {
-    $n
-  } {
-    margin-left: ($n / 24) * 100%;
-  }
-  }
-
-  @media(max-width: 576px) {
-    $class-prefix: col-phone;
-    @for $n from 1 through 24 {
-      //.col.col-1
-      //.col.col-2
-      &.# {
-        $class-prefix
-      }
-    # {
-      $n
-    } {width: ($n / 24) * 100%;}
-    }
-
-    //生成24个offset类
-    $class-prefix: offset-phone;
-    @for $n from 1 through 24 {
-      //.col.col-1
-      //.col.col-2
-      &.# {
-        $class-prefix
-      }
-    # {
-      $n
-    } {
+    &.#{$class-prefix}#{$n} {
       margin-left: ($n / 24) * 100%;
     }
-    }
   }
-
-  @media(min-width: 577px) and (max-width: 768px){
+  @media (min-width: 577px) {
     $class-prefix: col-ipad-;
     @for $n from 1 through 24 {
-      //.col.col-1
-      //.col.col-2
-      &.# {
-        $class-prefix
+      &.#{$class-prefix}#{$n} {
+        width: ($n / 24) * 100%;
       }
-    # {
-      $n
-    } {width: ($n / 24) * 100%;}
     }
-    //生成24个offset类
     $class-prefix: offset-ipad-;
     @for $n from 1 through 24 {
-      //.col.col-1
-      //.col.col-2
-      &.# {
-        $class-prefix
+      &.#{$class-prefix}#{$n} {
+        margin-left: ($n / 24) * 100%;
       }
-    # {
-      $n
-    } {
-      margin-left: ($n / 24) * 100%;
-    }
     }
   }
-
-  @media(min-width: 769px) and (max-width: 992px){
-    $class-prefix: col-narrow-pc;
+  @media (min-width: 769px){ // 770
+    $class-prefix: col-narrow-pc-;
     @for $n from 1 through 24 {
-      //.col.col-1
-      //.col.col-2
-      &.# {
-        $class-prefix
+      &.#{$class-prefix}#{$n} {
+        width: ($n / 24) * 100%;
       }
-    # {$n} {width: ($n / 24) * 100%;}}
-    //生成24个offset类
+    }
     $class-prefix: offset-narrow-pc-;
     @for $n from 1 through 24 {
-      //.col.col-1
-      //.col.col-2
-      &.# {
-        $class-prefix
+      &.#{$class-prefix}#{$n} {
+        margin-left: ($n / 24) * 100%;
       }
-    # {
-      $n
-    } {
-      margin-left: ($n / 24) * 100%;
-    }
     }
   }
-
-  @media(min-width: 993px) and (max-width: 1200px){
-    $class-prefix: col-pc;
+  @media (min-width: 993px) {
+    $class-prefix: col-pc-;
     @for $n from 1 through 24 {
-      //.col.col-1
-      //.col.col-2
-      &.# {
-        $class-prefix
+      &.#{$class-prefix}#{$n} {
+        width: ($n / 24) * 100%;
       }
-    # {$n} {width: ($n / 24) * 100%;}}
-    //生成24个offset类
+    }
     $class-prefix: offset-pc-;
     @for $n from 1 through 24 {
-      //.col.col-1
-      //.col.col-2
-      &.# {
-        $class-prefix
+      &.#{$class-prefix}#{$n} {
+        margin-left: ($n / 24) * 100%;
       }
-    # {$n} {
-      margin-left: ($n / 24) * 100%;
-    }
     }
   }
-
-  @media(min-width: 1201px){
-    $class-prefix: col-wide-pc;
+  @media (min-width: 1201px) {
+    $class-prefix: col-wide-pc-;
     @for $n from 1 through 24 {
-      //.col.col-1
-      //.col.col-2
-      &.# {$class-prefix}
-    # {$n} {width: ($n / 24) * 100%;}}
-    //生成24个offset类
+      &.#{$class-prefix}#{$n} {
+        width: ($n / 24) * 100%;
+      }
+    }
     $class-prefix: offset-wide-pc-;
     @for $n from 1 through 24 {
-      //.col.col-1
-      //.col.col-2
-      &.# {
-        $class-prefix
+      &.#{$class-prefix}#{$n} {
+        margin-left: ($n / 24) * 100%;
       }
-    # {$n} {margin-left: ($n / 24) * 100%;}
     }
   }
 }
-
 
 </style>
