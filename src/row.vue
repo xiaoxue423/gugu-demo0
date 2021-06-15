@@ -11,10 +11,10 @@ export default {
     gutter: {
       type: [Number, String]
     },
-    align:{
-      type:String,
-      validator(value){
-          return  ['left','right','center'].includes(value)
+    align: {
+      type: String,
+      validator(value) {
+        return ['left', 'right', 'center'].includes(value)
       }
     }
   },
@@ -29,9 +29,12 @@ export default {
   computed: {
     rowStyle() {
       let {gutter} = this
-      return {marginLeft: -gutter / 2 + 'px', marginRight: -gutter / 2 + 'px'}
+      return {
+        marginLeft: -(gutter / 2) + 'px',
+        marginRight: (-gutter) / 2 + 'px',
+      }
     },
-    rowClass(){
+    rowClass() {
       let {align} = this
       return [align && `align-${align}`]
     }
@@ -43,15 +46,18 @@ export default {
 .row {
   display: flex;
   flex-wrap: wrap;
-  &.align-left{
+
+  &.align-left {
     //水平靠左
     justify-content: flex-start;
   }
-  &.align-right{
+
+  &.align-right {
     //水平靠右
     justify-content: flex-end;
   }
-  &.align-center{
+
+  &.align-center {
     justify-content: center;
   }
 }
