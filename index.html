@@ -35,17 +35,6 @@
 </head>
 <body>
 <style>
-    .row {
-        display: flex;
-    }
-
-    .col[data-span="2"]{
-        width: 8.3333%;
-    }
-    .col[data-span="22"]{
-        width: 91.6667%;
-    }
-
     .demoBox{
         min-height: 50px;
         background: gray;
@@ -58,6 +47,11 @@
     }
 </style>
     <div id="app">
+        <g-row>
+            <g-col>1</g-col>
+            <g-col>2</g-col>
+        </g-row>
+        <hr/>
 <!--        <div>-->
 <!--            <g-row>-->
 <!--                <g-col span="23" offset="1" :narrow-pc="{span:12, offset:12}">-->
@@ -157,12 +151,15 @@
 
         <g-button icon="error">默认按钮</g-button>
         <g-button icon="settings">默认按钮</g-button>
+
         <div>
             <g-button icon="settings">默认按钮</g-button>
         </div>
+
         <div>
             <g-button :loading="loading1" @click="loading1 = !loading1">默认按钮</g-button>
         </div>
+
         <br/>
         <div>
             <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">默认按钮</g-button>

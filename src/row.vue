@@ -13,15 +13,18 @@ export default {
     },
     align:{
       type:String,
-      validator(){
+      validator(value){
           return  ['left','right','center'].includes(value)
       }
     }
   },
-  created() {
-    console.log('row created')
-    console.log(this.$children)
-    //没有儿子
+  mounted() {
+    this.$children.forEach((vm) => {
+      vm.gutter = this.gutter
+    })
+    // this.$children.forEach(function (vm){
+    //   vm.gutter = this.gutter
+    // }.bind(this))
   },
   computed: {
     rowStyle() {
@@ -33,25 +36,19 @@ export default {
       return [align && `align-${align}`]
     }
   },
-  mounted() {
-    console.log('row mounted')
-    console.log(this.$children)
-    //有儿子
-    this.$children.forEach((vm) => {
-      vm.gutter = this.gutter
-    })
-  },
-
 }
 </script>
 
 <style scoped lang="scss">
 .row {
   display: flex;
+  flex-wrap: wrap;
   &.align-left{
+    //水平靠左
     justify-content: flex-start;
   }
   &.align-right{
+    //水平靠右
     justify-content: flex-end;
   }
   &.align-center{
