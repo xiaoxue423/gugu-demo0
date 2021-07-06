@@ -24,185 +24,23 @@
             --border-color-hover: #666;
         }
 
-        #app {
-            margin: 40px;
-        }
-
-        body {
-            font-size: var(--font-size);
-        }
-        .row {
-            /*background: red;*/
-            /*margin-left: 10px;*/
-        }
-
-        .col {
-            /*background: #3eaf7c;*/
+        .demo {
+            border:1px solid black;
+            min-height: 100px;
         }
     </style>
 </head>
 <body>
 <div id="app">
-    <div style="border: 1px solid black;">
-        <g-row gutter="20">
-            <g-col span="12">1</g-col>
-            <g-col span="12">2</g-col>
-        </g-row>
-        <g-row gutter="8">
-            <g-col span="8">1</g-col>
-            <g-col span="8">2</g-col>
-            <g-col span="8">3</g-col>
-        </g-row>
-    </div>
+    <g-layout style="height: 100vh;">
+        <g-header class="demo">header</g-header>
+        <g-layout>
+            <g-sider class="demo">sider</g-sider>
+            <g-content class="demo">content</g-content>
+        </g-layout>
 
-    <br/>
-    <hr/>
-    <br/>
-    <!--        <div>-->
-    <!--            <g-row>-->
-    <!--                <g-col span="23" offset="1" :narrow-pc="{span:12, offset:12}">-->
-    <!--                    <div class="demo"></div>-->
-    <!--                </g-col>-->
-    <!--            </g-row>-->
-    <!--        </div>-->
-
-    <!--        <g-row class="topbar">-->
-    <!--            <g-col class="demoBox" span="9">-->
-    <!--                <g-row align="left">-->
-    <!--                    <g-col style="width: 50px">1</g-col>-->
-    <!--                    <g-col>2</g-col>-->
-    <!--                    <g-col>3</g-col>-->
-    <!--                    <g-col>4</g-col>-->
-    <!--                </g-row>-->
-    <!--            </g-col>-->
-
-    <!--            <g-col class="demoBox" span="15">-->
-    <!--                <g-row align="right">-->
-    <!--                    <g-col style="width: 50px">1</g-col>-->
-    <!--                    <g-col>2</g-col>-->
-    <!--                    <g-col>3</g-col>-->
-    <!--                    <g-col>4</g-col>-->
-    <!--                    <g-col>5</g-col>-->
-    <!--                    <g-col>6</g-col>-->
-    <!--                    <g-col>7</g-col>-->
-    <!--                </g-row>-->
-    <!--            </g-col>-->
-
-    <!--        </g-row>-->
-
-    <!--        <g-row class="logo-and-search-and-qrcode">-->
-    <!--            <g-col class="demoBox" span="4">-->
-    <!--                <g-row align="center">-->
-    <!--                    <g-col  class="logo-wrapper">-->
-    <!--                        <img width="50" class="logo" src="https://img.alicdn">-->
-    <!--                    </g-col>-->
-    <!--                </g-row>-->
-    <!--            </g-col>-->
-
-    <!--            <g-col class="demoBox" span="14"></g-col>-->
-    <!--            <g-col class="demoBox" span="6"></g-col>-->
-
-    <!--        </g-row>-->
-
-    <!--        <div style="border: 1px solid black">-->
-    <!--            <g-row gutter="20">-->
-    <!--                <g-col span="2"-->
-    <!--                       :phone="{span:12,offset: 0}"-->
-    <!--                       :ipad="{span:16}"-->
-    <!--                       :pc="{span:20}"-->
-    <!--                >1</g-col>-->
-    <!--                <g-col span="20"-->
-    <!--                       offset="2"-->
-    <!--                       :phone="{span: 12,offset: 0}"-->
-    <!--                       :ipad="{span: 16}"-->
-    <!--                       :narrow-pc="{span: 20}"-->
-    <!--                       :pc="{span: 22}"-->
-    <!--                       :wide-pc="{span: 23}"-->
-    <!--                >11</g-col>-->
-    <!--            </g-row>-->
-    <!--            <g-row gutter="20">-->
-    <!--                <g-col>1</g-col>-->
-    <!--                <g-col>2</g-col>-->
-    <!--                <g-col>3</g-col>-->
-    <!--            </g-row>-->
-    <!--            <g-row gutter="20">-->
-    <!--                <g-col>1</g-col>-->
-    <!--                <g-col>2</g-col>-->
-    <!--                <g-col>3</g-col>-->
-    <!--                <g-col>4</g-col>-->
-    <!--            </g-row>-->
-    <!--            <g-row gutter="20">-->
-    <!--                <g-col span="2">1</g-col>-->
-    <!--                <g-col span="20" offset="2">11</g-col>-->
-    <!--            </g-row>-->
-    <!--            <g-row gutter="20">-->
-    <!--                <g-col span="4">1</g-col>-->
-    <!--                <g-col span="18" offset="2">11</g-col>-->
-    <!--            </g-row>-->
-
-    <!--            <g-row gutter="20">-->
-    <!--                <g-col span="4">1</g-col>-->
-    <!--                <g-col span="8" offset="2">11</g-col>-->
-    <!--                <g-col span="8" offset="2">11</g-col>-->
-    <!--            </g-row>-->
-
-    <!--            <g-row>-->
-    <!--                <g-col span="4">1</g-col>-->
-    <!--                <g-col span="4" offset="6">11</g-col>-->
-    <!--                <g-col span="8" offset="2">11</g-col>-->
-    <!--            </g-row>-->
-
-    <!--        </div>-->
-
-
-    <g-button icon="error">默认按钮</g-button>
-    <g-button icon="settings">默认按钮</g-button>
-
-    <div>
-        <g-button icon="settings">默认按钮</g-button>
-    </div>
-
-    <div>
-        <g-button :loading="loading1" @click="loading1 = !loading1">默认按钮</g-button>
-    </div>
-
-    <br/>
-    <div>
-        <g-button icon="settings" :loading="loading2" @click="loading2 = !loading2">默认按钮</g-button>
-    </div>
-
-    <br/>
-
-    <div>
-        <g-button icon="settings" icon-position="right" :loading="loading3" @click="loading3 = !loading3">默认按钮
-        </g-button>
-    </div>
-
-    <br/>
-
-    <br/>
-    <div>
-        <g-button-group>
-            <g-button icon="left">上一页</g-button>
-            <g-button>更多</g-button>
-            <g-button icon="right" icon-position="right">下一页</g-button>
-        </g-button-group>
-    </div>
-
-    <br/>
-    <div>
-        <g-input value="张三" @change="inputChange"></g-input>
-        <g-input value="李四"></g-input>
-        <g-input value="王五" :disabled="true"></g-input>
-        <g-input value="小明" readonly></g-input>
-        <g-input value="小雪" error="姓名不能少于三个字"></g-input>
-    </div>
-    <br/>
-    <div>
-        <g-input v-model="message"></g-input>
-        <button @click="message+=1">message + '1'</button>
-        <p> {{ message }} </p>
-    </div>
+        <g-footer class="demo">footer</g-footer>
+    </g-layout>
 </div>
 
 <script src="./src/app.js"></script>

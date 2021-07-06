@@ -1,17 +1,17 @@
 <template>
-    <div class="sider">
+    <div class="header">
       <slot></slot>
     </div>
 </template>
 
 <script>
     export default {
-        name: "GuguSider"
+        name: "header"
     }
 </script>
 
 <style scoped>
-.sider {
+.header{
 
 }
 </style>
