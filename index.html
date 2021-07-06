@@ -28,6 +28,18 @@
             border:1px solid black;
             min-height: 100px;
         }
+        .sider{
+            background: #333;
+            width: 200px;
+        }
+        .header{
+            background: #999;
+            height: 100px;
+        }
+        .footer {
+            background-attachment: #ccc;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
@@ -37,6 +49,18 @@
         <g-layout>
             <g-sider class="demo">sider</g-sider>
             <g-content class="demo">content</g-content>
+        </g-layout>
+
+        <g-footer class="demo">footer</g-footer>
+    </g-layout>
+    <br/>
+    <br/>
+    <g-layout style="height: 100vh;">
+        <g-sider class="demo">sider</g-sider>
+        <g-layout>
+            <g-header class="demo">header</g-header>
+            <g-content class="demo">content</g-content>
+            <g-footer class="demo">footer</g-footer>
         </g-layout>
 
         <g-footer class="demo">footer</g-footer>
